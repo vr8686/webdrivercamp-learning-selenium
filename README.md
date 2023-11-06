@@ -4,7 +4,7 @@ This repository contains the completed assignments for the Project "Learning Sel
 
 ## Contents
 
-- Assignment "Selenium" in file: [search.py](./search.py)
+- Assignment "Selenium" in directory: [selenium_basics](./selenium_basics)
 
 ## Contact Information
 
