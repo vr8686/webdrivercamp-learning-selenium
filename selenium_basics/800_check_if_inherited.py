@@ -1,7 +1,8 @@
 def check_inheritance(obj, class_):
-    return type(obj) is class_.__bases__
+    return isinstance(obj, class_) and (not type(obj) is class_)
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     class Base:
         pass
 
