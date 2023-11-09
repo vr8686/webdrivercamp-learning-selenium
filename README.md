@@ -5,6 +5,7 @@ This repository contains the completed assignments for the Project "Learning Sel
 ## Contents
 
 - Assignment "Selenium" in directory: [selenium_basics](./selenium_basics)
+- Assignment "Python - Classes" in directory: [selenium_basics](./selenium_basics) and [components](./selenium_basics/components)
 
 ## Contact Information
 
