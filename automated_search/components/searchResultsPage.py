@@ -12,7 +12,9 @@ class LeftFilterPanel(Base):
         self.wait = wait
 
     def select_brand(self, brand):
-        brand_selection_locator = (By.XPATH, f'//span[@class="cbx x-refine__multi-select-cbx" and contains(translate(text(),"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz"), "{brand.lower()}")]')
+        brand_selection_locator = (By.XPATH, f'//span[@class="cbx x-refine__multi-select-cbx" and '
+                                             f'contains(translate(text(),"ABCDEFGHIJKLMNOPQRSTUVWXYZ",'
+                                             f'"abcdefghijklmnopqrstuvwxyz"), "{brand.lower()}")]')
         print(f'Selecting brand: "{brand}"')
         self.click_element(brand_selection_locator)
         if self.wait.until(ec.visibility_of_element_located(LeftFilterPanel.LOCATOR)):
@@ -48,12 +50,6 @@ class SearchResults(Base):
         elif -60 <= item <= -53:
             real_number = 62 - abs(item)
         return real_number
-
-    @classmethod
-    def item_title_locator(cls, item_number):
-        real_item_number = SearchResults.real_item_number(item_number)
-        item_title_locator = f'//li[@data-gr4="{real_item_number}"]//span[@role="heading"]'
-        return item_title_locator
 
     def open_item_in_new_tab(self, item_number: int):
         real_item_number = SearchResults.real_item_number(item_number)

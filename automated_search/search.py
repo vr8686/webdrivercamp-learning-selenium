@@ -53,7 +53,7 @@ brand = "casio"  # Defining the brand to select
 left_filter_panel.select_brand(brand)  # Selecting the brand on filter panel
 
 # Step8. Verify the last two result items contain “Casio“ in their title
-items_to_check = [-1, -2]  # numbers as you SEE them on the page
+items_to_check = [-1, -2]
 for item in items_to_check:
     search_results.verify_item_title_contains(item, brand)
 
