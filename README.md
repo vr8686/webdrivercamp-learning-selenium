@@ -6,6 +6,7 @@ This repository contains the completed assignments for the Project "Learning Sel
 
 - Assignment "Selenium" in directory: [selenium_basics](./selenium_basics)
 - Assignment "Python - Classes" in directory: [selenium_basics](./selenium_basics) and [components](./selenium_basics/components)
+- Assigment "Automated Search" in directory: [automated_search](./automated_search)
 
 ## Contact Information
 
