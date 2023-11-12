@@ -20,6 +20,6 @@ def compare_data(dict1, dict2):
 def verification_report():
     print(f'{'#' * 10} VERIFICATION REPORT {'#' * 10}')
     if not MISMATCHES:
-        print(f'No mismatches has been found')
+        print(f'No mismatches have been found')
     else:
         print(MISMATCHES)
