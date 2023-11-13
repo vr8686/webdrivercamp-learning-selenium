@@ -1,7 +1,8 @@
 from automated_search.components.base import Base
 from automated_search.components import verification
-from automated_search.components.itemPage import ItemPage
-from automated_search.components.searchResultsPage import LeftFilterPanel, SearchResults
+from automated_search.components.item_page import ItemPage
+from automated_search.components.left_filter_panel import LeftFilterPanel
+from automated_search.components.search_results_page import SearchResults
 
 base = Base()  # Initializing Base class
 left_filter_panel = LeftFilterPanel(base.driver, base.wait)  # Initializing LeftFilterPanel class

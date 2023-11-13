@@ -1,4 +1,4 @@
-MISMATCHES = []
+mismatches = []
 
 
 def compare_data(dict1, dict2):
@@ -12,14 +12,14 @@ def compare_data(dict1, dict2):
                 mismatch = (f"'{key}' has different values: {dict1[key]} on Search Result Page and {dict2[key]} on "
                             f"the Item Page")
                 print(mismatch)
-                MISMATCHES.append(mismatch)
+                mismatches.append(mismatch)
         else:
             print(f"'{key}' is missing")
 
 
 def verification_report():
     print(f'{'#' * 10} VERIFICATION REPORT {'#' * 10}')
-    if not MISMATCHES:
+    if not mismatches:
         print(f'No mismatches have been found')
     else:
-        print(MISMATCHES)
+        print(mismatches)
