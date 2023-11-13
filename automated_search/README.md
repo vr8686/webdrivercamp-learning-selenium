@@ -32,3 +32,9 @@ Update 11/13/23:
 3. Renamed [components/item_page.py](./components/item_page.py) module according to PEP 8
 4. Renamed [components/search_results_page.py](./components/search_results_page.py) according to PEP 8
 5. Moved all locators that were defined Class variables back to methods
+6. Moved both statements to search.py
+```
+driver = webdriver.Chrome()
+wait = WebDriverWait(driver, 10)
+```
+7. Moved verify_title_contains() function to verification module and changed input data.

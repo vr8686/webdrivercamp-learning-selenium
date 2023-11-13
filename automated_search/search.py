@@ -3,8 +3,13 @@ from automated_search.components import verification
 from automated_search.components.item_page import ItemPage
 from automated_search.components.left_filter_panel import LeftFilterPanel
 from automated_search.components.search_results_page import SearchResults
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
 
-base = Base()  # Initializing Base class
+driver = webdriver.Chrome()
+wait = WebDriverWait(driver, 10)
+
+base = Base(driver, wait)  # Initializing Base class
 left_filter_panel = LeftFilterPanel(base.driver, base.wait)  # Initializing LeftFilterPanel class
 item_page = ItemPage(base.driver, base.wait)  # Initializing ItemPage class
 search_results = SearchResults(base.driver, base.wait)  # Initializing Search Results Page class
@@ -21,7 +26,7 @@ left_filter_panel.select_brand(brand)  # Selecting the brand on filter panel
 # Step3. Verify the first two result items contain “rolex” in their title
 items_to_check = [1, 2]  # numbers as you SEE them on the page
 for item in items_to_check:
-    search_results.verify_item_title_contains(item, brand)
+    verification.verify_title_contains(search_results.get_title_text(item), brand)
 
 # Step4. Store title and price of the first two results in a variable
 search_results_data = {"item1 - title": search_results.get_title_text(items_to_check[0]),
@@ -56,7 +61,7 @@ left_filter_panel.select_brand(brand)  # Selecting the brand on filter panel
 # Step8. Verify the last two result items contain “Casio“ in their title
 items_to_check = [-1, -2]
 for item in items_to_check:
-    search_results.verify_item_title_contains(item, brand)
+    verification.verify_title_contains(search_results.get_title_text(item), brand)
 
 # Step9. Save and print all the mismatches if any
 verification.verification_report()

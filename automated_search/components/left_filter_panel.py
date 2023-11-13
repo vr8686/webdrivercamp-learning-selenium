@@ -6,8 +6,7 @@ from selenium.webdriver.common.by import By
 class LeftFilterPanel(Base):
 
     def __init__(self, driver, wait):
-        self.driver = driver
-        self.wait = wait
+        super().__init__(driver, wait)
 
     def select_brand(self, brand):
         brand_selection_locator = (By.XPATH, f'//span[@class="cbx x-refine__multi-select-cbx" and '

@@ -4,9 +4,11 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 
 class Base:
-    def __init__(self):
-        self.driver = webdriver.Chrome()
-        self.wait = WebDriverWait(self.driver, 10)
+    def __init__(self, driver, wait):
+        self.driver = driver
+        self.wait = wait
+        # self.driver = webdriver.Chrome()
+        # self.wait = WebDriverWait(self.driver, 10)
 
     def open_url(self, url):
         self.driver.get(url)

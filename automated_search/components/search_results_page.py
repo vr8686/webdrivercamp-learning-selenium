@@ -5,8 +5,7 @@ from selenium.webdriver.common.by import By
 
 class SearchResults(Base):
     def __init__(self, driver, wait):
-        self.driver = driver
-        self.wait = wait
+        super().__init__(driver, wait)
 
     @classmethod
     def real_item_number(cls, item: int):
@@ -28,16 +27,6 @@ class SearchResults(Base):
         self.click_element(item_locator)
         print(f"Opening page... Current url is: {self.driver.current_url}")
         self.switch_webdriver_to_the_new_tab()
-
-    def verify_item_title_contains(self, item_number: int, keyword: str):
-        print(f'Checking if title of item #{item_number} contains word \"{keyword}\"...')
-        title_text = SearchResults.get_title_text(self, item_number)
-        if keyword in title_text.lower():
-            print(f'Success. The title of item #{item_number} contains \"{keyword}\".')
-        else:
-            mismatch = f'Mismatch. The title of item #{item_number} DOES NOT contain \"{keyword}\"'
-            print(mismatch)
-            verification.mismatches.append(mismatch)
 
     def get_title_text(self, item_number) -> str:
         real_item_number = SearchResults.real_item_number(item_number)

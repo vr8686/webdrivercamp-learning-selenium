@@ -4,8 +4,7 @@ from automated_search.components.base import Base
 class ItemPage(Base):
 
     def __init__(self, driver, wait):
-        self.driver = driver
-        self.wait = wait
+        super().__init__(driver, wait)
 
     def get_title_text(self) -> str:
         item_title_locator = '//h1//span[@class="ux-textspans ux-textspans--BOLD"]'

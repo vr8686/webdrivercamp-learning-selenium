@@ -1,5 +1,5 @@
+from automated_search.components.search_results_page import SearchResults
 mismatches = []
-
 
 def compare_data(dict1, dict2):
     print(f'Comparing data')
@@ -23,3 +23,13 @@ def verification_report():
         print(f'No mismatches have been found')
     else:
         print(mismatches)
+
+
+def verify_title_contains(title_text, keyword: str):
+    print(f'Checking if title text contains word \"{keyword}\"...')
+    if keyword in title_text.lower():
+        print(f'Success. The title contains \"{keyword}\".')
+    else:
+        mismatch = f'Mismatch. The title DOES NOT contain \"{keyword}\"'
+        print(mismatch)
+        mismatches.append(mismatch)
