@@ -1,0 +1,11 @@
+# PyCharm
+.idea/
+
+# virtual environment
+.venv/
+
+# pycache
+__pycache__/
+
+# exercise runners
+*main.py
