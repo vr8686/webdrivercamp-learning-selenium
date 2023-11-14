@@ -31,7 +31,7 @@ class SearchResults(Base):
         real_item_number = SearchResults.real_item_number(item_number)
         item_title_locator = f'//li[@data-gr4="{real_item_number}"]//span[@role="heading"]'
         title_text = self.get_text(item_title_locator)
-        #print(f'Item #{item_number} title is: {title_text}')
+        print(f'Item #{item_number} title is: {title_text}')
         return title_text
 
     def get_price(self, item_number) -> float:
