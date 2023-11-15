@@ -1,5 +1,5 @@
-from automated_search.components.search_results_page import SearchResults
 mismatches = []
+
 
 def compare_data(dict1, dict2):
     print(f'Comparing data')
